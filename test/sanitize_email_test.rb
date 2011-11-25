@@ -5,7 +5,7 @@ class SanitizeEmailTest < Test::Unit::TestCase
 
   def test_send_can_override_recips_cc_bcc_all_independently
     # configure SanitizeEmail
-    ActionMailer::Base.sanitized_recipients = "john@smartlogicsolutions.com"
+    ActionMailer::Base.allowed_recipients = "john@smartlogicsolutions.com"
     ActionMailer::Base.sanitized_bcc = nil
     ActionMailer::Base.sanitized_cc = "john@smartlogicsolutions.com"
     ActionMailer::Base.local_environments = %w( test )
